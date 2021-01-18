@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>欢迎进入第三阶段！</h1>
+  <script>
+    var msg=prompt("请输入消息内容");
+    var i=msg.search(/([我卧]|wo)\s*([槽草艹操]|cao)/i); 
+    if(i!==-1){document.write(`<h4 style="color:red">包含敏感词，禁止发送</h4>`)}else{document.write(`<h4 style="color:greeen">然哥说:${msg}</h4>`)};
+  </script>
+</body>
+</html>

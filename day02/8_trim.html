@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //鄙视题三个函数: 
+    //修剪
+    //trimLeft() 可去掉字符串开头的空字符
+    //trimright() 可去掉字符串结尾的空字符
+    //trim() 可去掉字符串开头和结尾的空字符
+
+    // function trimleft(str){
+    //   var str2=str.replace(/^\s+/,"");
+    //   return str2;
+    // }
+    // function trimright(str){
+    //   var str2=str.replace(/\s+$/,"");
+    //   return str2;
+    // }
+    // function trim(str){
+    //   var str2=str.replace(/^\s+|\s+$/g,"");
+    //   return str2;
+    // }
+    var str="   Hello World   ";
+    // console.log(trimleft(str));
+    // console.log(trimright(str));
+    // console.log(trim(str));
+
+    console.log(str.trimLeft());
+    console.log(str.trimRight());
+    console.log(str.trim());
+  </script>
+</body>
+</html>

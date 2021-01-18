@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //想把电子邮件切割为用户名和域名两部分
+    var email="zhangdong@tedu.cn";
+    //                  |
+    //      ["zhangdong","tedu.cn"]
+    //            0          1
+    //按@将字符串email一分为二
+    var arr=email.split("@");
+    console.log(arr);
+    var uname=arr[0];
+    var domain=arr[1];
+    console.log(uname, domain);
+
+    //想把一个英文的句子切割为单词数组
+    var str="you can you up";
+    //按空格切割str
+    var arr=str.split(" ");
+    console.log(arr);
+
+    //如果每个单词之间的空格个数不确定有几个？
+    var str2="you   can   you up";
+     //按一个或多个空格切割str
+    var arr2=str.split(/\s+/);
+    console.log(arr2);
+  </script>
+</body>
+</html>

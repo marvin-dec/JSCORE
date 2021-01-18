@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+   var str="you can you up";
+
+  str=str.replace(/\b[a-z]/ig,(keyword)=>{
+    console.log(`执行了一次回调函数，传入${keyword},返回${keyword.toUpperCase()}`);
+    return keyword.toUpperCase();
+  }) 
+  console.log(str);
+  </script>
+  
+</body>
+</html>
