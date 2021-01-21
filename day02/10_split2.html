@@ -7,13 +7,15 @@
 </head>
 <body>
   <script>
-    // 笔试题：翻转字符串
+    // 笔试题：翻转字符串 
     var str="helloworld";
     // 把字符串切割成单个字符的数组,固定套路用空字符切割
     var arr=str.split("");
     console.log(arr);
     // 对切割后的数组进行数组翻转
-    var arr2=arr.reverse();
+    // var arr2=arr.reverse();
+    // 数组是可变类型，可不用变量接住
+    arr.reverse();
     console.log(arr2);
     // 把翻转后的数组无缝拼接回字符串
      //错误: join()什么都不写，默认用,连接每个字符

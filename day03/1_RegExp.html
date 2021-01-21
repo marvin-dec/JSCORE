@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 加设从服务器端用ajax请求过来一个敏感词数组
+    // 要求：将来数组里有什么词，我们的程序就要房主什么词
+    var arr=["青天","明月","紫烟"];
+    // 请用户输入一条消息内容
+    var msg=prompt("请输入消息内容");
+    var reg=new RegExp(arr.join("|"));
+    var i=msg.match(reg);
+    i!=null?document.write(`<h2 style="color:red">包含敏感词，禁止发送</h2>`):document.write(`<h2 style="color:green">然哥说:${msg}</h2>`);
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //不希望start变量在完事后，依然留在内存中！
+    (function(){
+      //获得当前系统时间
+      var start=new Date(); //局部变量
+      //提示: 开始加载页面内容
+      alert(`开始加载页面内容, at:${start.toLocaleString()}`)
+    })();
+  </script>
+  <script>
+    //不希望end变量在使用后依然遗留在内存
+    (function(){
+      //获得当前系统时间
+      var end=new Date(); //局部变量
+      //提示:页面内容加载完成
+      alert(`页面内容加载完成, at:${end.toLocaleString()}`);
+    })();
+
+    //变量start和end，在弹出提示后，就不会再使用了！
+    //但是，因为start和end是全局变量，所以永久的留在window中占用内存空间，全局污染！
+    console.log(window);
+  </script>
+</body>
+</html>

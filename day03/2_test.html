@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 验证用户输入的密码是否正确
+    var msg=prompt("请输入密码");
+    var reg=/^\d{6}$/;
+    var bool=reg.test(msg);
+    bool?document.write(`<h1 style="color:green">密码格式正确</h1>`):document.write(`<h1 style="color:red">密码格式不正确</h1>`);
+
+  </script>
+</body>
+</html>
