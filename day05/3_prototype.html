@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 想定义两个学生lilei和hmm
+    // 定义所有学生类型的对象统一的属性结构: 
+    function Student(sname,sage){
+      this.sname=sname,
+      this.sage=sage
+    };
+    Student.prototype.className="初一2班";
+    var lilei=new Student("Li lei","11");
+    var hmm=new Student("Han Meimei","12");
+    console.log(lilei);
+    console.log(hmm);
+    console.log(lilei.className,hmm.className);
+    // 过了一年
+    Student.prototype.className="初二2班";
+    console.log(lilei.className,hmm.className);
+    // 又过了一年
+    lilei.className="6年级2班";
+    Student.prototype.className="初三2班";
+    console.log(lilei.className,hmm.className);
+
+    // console.log(Student.toString());
+  </script>
+</body>
+</html>

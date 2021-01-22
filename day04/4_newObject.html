@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //创建lilei
+    var lilei=new Object();
+    console.log(lilei);//{}
+    lilei.sname="Li Lei";
+    lilei["sage"]=11;
+    lilei.intr=function(){
+      console.log(`I'm ${this.sname}, I'm ${this.sage}`)
+    }
+    console.log(lilei);
+    lilei["intr"]();
+    //尝试获取lilei的班级
+    console.log(lilei["className"]);//undefined
+    //尝试为李磊添加班级属性
+    lilei.className="初一2班";
+    console.log(lilei);
+
+    //用关联数组
+    var lilei=[];
+    lilei.sname="Li Lei";
+    lilei["sage"]=11;
+    lilei.intr=function(){ 
+      console.log(`I'm ${this.sname}, I'm ${this.sage}`)
+    }
+    console.log(lilei);
+    lilei.intr();
+    console.log(lilei.className);//undefined
+    lilei["className"]="初一2班";
+    console.log(lilei);
+
+  </script>
+</body>
+</html>

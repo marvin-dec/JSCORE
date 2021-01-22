@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 通过闭包三步实现取号机函数 -->
+  <script>
+    var getnum=function(){
+      var i=0;
+      return function(){
+        i++;
+        console.log(i);
+      }
+    }
+    var getNum=getnum();
+    getNum();
+    getNum();
+    i=0;
+    getNum();
+    getNum();
+
+  </script>
+</body>
+</html>

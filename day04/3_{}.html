@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var Lilei={
+    sname:"Li lei",
+    sage:11,
+    intrself:function(){
+      console.log(`Lilei说：I'm${this.sname},I'm ${this.sage}`)
+      }
+    };
+    console.log(Lilei);
+    console.log(Lilei.sage);//11
+    Lilei.intrself();//
+    Lilei.sage++;
+    console.log(Lilei.sage);//12
+    Lilei.intrself(); 
+
+    // 其实执行的是window.intrSelf()，intrSelf()中的this指window，因为window中没有sname和sage，所以window.sname和window.sage返回undefined
+    var intrself=Lilei.intrself;
+    intrself();//I'm undefined,I'm undefined
+  </script>
+</body>
+</html>

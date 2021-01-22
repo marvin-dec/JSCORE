@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 创建外层函数，定义外层函数包裹保护的变量和内层函数
+    function parent(){
+      var total=1000;
+      // 外层函数将内层函数返回外部
+      return function(money){
+        total-=money;
+        console.log(`消费${money}元，还剩${total}元`)
+      }
+    }
+    // 调用者必须调用外层函数才能获得函数的返回结果——内层函数
+    var pay=parent();
+    pay(100);
+    pay(100);
+    pay(100);
+    var pay2=parent();
+    pay2(100);
+  </script>
+</body>
+</html>

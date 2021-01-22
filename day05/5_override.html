@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function Student(sname,sage){
+      this.sname=sname,
+      this.sage=sage
+
+    }
+    Student.prototype.toString=function(){
+      return `{
+        学生姓名：${this.sname},
+        学生年龄：${this.sage}
+      }`
+    }
+    var lilei=new Student("Li lei",11);
+    console.log(lilei);
+    console.log(lilei.toString());
+  </script>
+</body>
+</html>

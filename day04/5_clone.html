@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var clone=function(oldstr){
+      var obj={};
+      for (var key in oldstr){
+        obj[key]=lilei[key];
+      }
+      console.log(obj);
+      return obj;
+    }
+    var lilei={
+      sname:"Li lei",
+      sage:11
+    }
+    var lilei2=clone(lilei);
+    console.log(lilei2);
+    console.log(lilei==lilei2);
+    //如果==左右都是对象，则==不再比较对象内容，而是比较两个对象的地址是否相同！
+    //如果返回true，说明克隆失败！因为地址是同一个对象，说明没有多出一个对象
+    //如果返回false，说明克隆成功！因为地址不同！说明是先后创建的两个对象！
+
+  </script>
+</body>
+</html>
