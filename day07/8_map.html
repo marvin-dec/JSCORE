@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var arr=[1,2,3,4,5];
+    var arr2=arr.map(function(value,i,arr){
+      console.log(`map()自动调用了一次回调函数：将原数组${arr}中位置${i}的元素${value}传入回调函数进行加工，经回调函数加工后返回新元素值${value*2}自动放进新数组${i}位置`)
+      return value*2;
+    })
+    console.log(arr2);
+    console.log(arr);
+  </script>
+</body>
+</html>

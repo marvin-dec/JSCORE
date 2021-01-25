@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    "use strict";
+    var eric={
+      eid:1001,
+      ename:"埃里克"
+    }
+
+    // 要求不能修改员工的编号
+    // 设置Eric对象的eid属性为不可修改
+    Object.defineProperty(eric,"eid",{
+      writable:false
+    })
+    // 试图修改eid
+    eric.eid=-2;
+    //严格模式下报错 Cannot assign to read only property 'eid' of object '#<Object>' at 4_use_strict.html:25
+    console.log(eric);
+  </script>
+</body>
+</html>

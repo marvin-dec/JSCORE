@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    "use strict";
+    function Student(sname,sage){
+      this.sname=sname,
+      this.sage=sage
+    }
+    var lilei=new Student("Li Lei",11);
+    //错误的使用了构造函数: 
+    var hmm=Student("Han Meimei",12);
+            //this->window
+            //this.sname -> window.sname="Han Meimei"
+            //this.sage -> window.sage=12
+    console.log(lilei);
+    // console.log(hmm);
+    // console.log(sname);//全局
+    // console.log(sage);//全局
+    // console.log(window);
+
+  </script>
+</body>
+</html>

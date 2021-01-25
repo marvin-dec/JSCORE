@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    "use strict";
+    var eric={
+      eid:1001,
+      ename:"埃里克",
+      salary:12000
+    }
+
+    // 禁止修改eid,删除ename,遍历salary
+    Object.defineProperties(eric,{
+      eid:{
+        writable:false,
+        configurable:false
+      },
+      ename:{
+        configurable:false
+      },
+      salary:{
+        enumerable:false,
+        configurable:false
+      }
+    });
+
+    // 试图修改eid
+    // Object.defineProperty(eric,"ename",{
+    //   configurable:true,
+    //   writable:true
+    // });
+    // eric.eid=-2;
+    // 试图删除ename
+    // delete eric.ename;
+
+
+    // 试图遍历salary
+    for (var key in eric){
+      console.log(`属性名：${key},属性值：${eric[key]}`)
+    }
+
+    console.log(eric);
+  </script>
+</body>
+</html>

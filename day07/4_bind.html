@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function calc(base,bonus1,bonus2){
+      console.log(`${this.sname}的总工资为${base+bonus1+bonus2}元`)
+    }
+    var lilei={sname:"Li lei"};
+    var hmm={sname:"Han Meimei"};
+    // 为李磊创建专属的计算函数
+    // 
+    var calc2=calc.bind(lilei,10000,2000);
+    calc2(1000);
+    calc2(2000);
+    calc2(3000);
+  </script>
+</body>
+</html>

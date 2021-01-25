@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    "use strict";
+    var eric={
+      eid:1001,
+      ename:"埃里克",
+      eage:25
+    }
+    Object.defineProperties(eric,{
+      // 先创建半隐藏的_eage
+      _eage:{
+        value:eric.eage,
+        writable:true,
+        enumerable:false,
+        configurable:false
+      },
+      eage:{
+        get:function(){
+          return this._eage
+        },
+        set:function(value){
+          if(value>=18&&value<=65){
+            console.log(`修改成功，数据保存在_eage中`);
+            this._eage=value
+          }else{
+            throw Error(`修改失败，年龄必须在18~65之间`)
+          }
+        },
+        enumerable:true,
+        configurable:false
+
+      }
+    });
+
+    eric.eage=27;//
+    console.log(eric);
+    // eric.eage=-2;
+    // console.log(eric);
+  </script>
+</body>
+</html>
