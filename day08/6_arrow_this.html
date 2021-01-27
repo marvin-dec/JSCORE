@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var lilei={
+      sname:"Li lei",
+      friends:["亮亮","然然","东东"],
+       //intr:()=>{//错误：intr内this->对象外this->window
+      //intr:function(){
+        intr(){//ES6对对象方法的简写: 可以不写":function"
+             //强调: ES6简写绝对不等于箭头函数，因为不影响this！this还和使用function时保持一致！
+        //intr内this->将来lilei.intr()中.前的lilei
+        //希望李磊会说:
+        //Li Lei认识 亮亮
+        //Li Lei认识 然然
+        //Li Lei认识 东东
+        //遍历李磊自己的friends数组
+        //如果前边intr改为=>，则这里报错: 
+        //不能访问undefined的forEach
+        //this.friends=undefined
+        //因为this.friends=window.friends=undefined
+        this.friends.forEach(
+          //function(value){//实体墙
+          //问题: 希望this指lilei，但是回调函数的this->window
+          //解决: 将function改为箭头函数
+          value=>{//栅栏
+            //结果: 回调函数内部this->外部intr内的this->lilei
+            //仅限于this，内部的其它局部变量依然不会超出函数的范围
+            console.log(`${this.sname} 认识 ${value}`)
+          }
+        )
+      }
+
+    }
+    lilei.intr();
+  </script>
+</body>
+</html>

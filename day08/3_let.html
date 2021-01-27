@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var t=0;
+    function fun1(){
+      console.log(`fun1执行耗时0.3s`);
+      t+=0.3;
+    }
+    function fun2(){
+      console.log(`fun2执行耗时0.8s`);
+      t+=0.8;
+
+      if (true){
+        let t=new Date();
+        console.log(`新代码在${t.toLocaleString()}被执行`);
+      }
+    }
+    fun1();
+    fun2();
+    console.log(`共耗时${t}s`);//1.1s
+  </script>
+</body>
+</html>

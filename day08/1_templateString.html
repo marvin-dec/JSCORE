@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script> 
+  var price=12.5;
+  var count=5;
+  console.log(`
+    单价：￥${price.toFixed(2)}
+    数量：${count}
+    ========================
+    小计：￥${(price*count).toFixed(2)}
+  `);
+  var sex=1;
+  console.log(`性别：${sex?"男":"女"}`);
+  // 获取当前时间对应的ms数 new Date().getTime()
+  var orderTime=new Date();
+  console.log(`下单时间：${orderTime.toLocaleString()}`);
+
+  var week=["日","一","二","三","四","五","六"];
+  var i=new Date().getDay();
+  console.log(`今天是：星期${week[i]}`);
+  </script>
+</body>
+</html>

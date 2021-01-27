@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // function add(a,b){
+    //   return a+b;
+    // }
+    var add=(a,b)=>a+b;
+    console.log(add(3,5));//8
+
+    // var arr=[23,12,2,1,123,3];
+    // arr.sort(function(a,b){return a-b});
+    // console.log(arr);
+    var arr=[23,12,2,1,123,3];
+    arr.sort((a,b)=>a-b);
+    console.log(arr);
+
+    // var str="you can you up";
+    // str=str.replace(/\b[a-z]/g,function(keyword){
+    //   return keyword.toUpperCase();
+    // });
+    // console.log(str);
+    var str="you can you up";
+    str=str.replace(
+      /\b[a-z]/g,keyword=>keyword.toUpperCase());
+    console.log(str);
+
+    // var arr=["亮亮","然然","东东"];
+    // arr.forEach(function(value){
+    //   console.log(`${value} - 到`)
+    // });
+    var arr=["亮亮","然然","东东"];
+    arr.forEach(value=>console.log(`${value}-到`));
+
+    // var arr=[1,2,3,4,5];
+    // var arr2=arr.map(function(value){
+    //   return value*2;
+    // });
+    // console.log(arr2);
+    var arr=[1,2,3,4,5];
+    var arr2=arr.map(value=>value*2);
+    console.log(arr2);
+
+    // var arr=[1,2,3,4,5];
+    // var result=arr.reduce(function(box,value){
+    //   return box+value
+    // },0);
+    // console.log(result);//15
+    var arr=[1,2,3,4,5];
+    var result=arr.reduce((box,value)=>box+value,0);
+    console.log(result);//15
+
+    // (function(){
+    //   var t=new Date();
+    //   console.log(`网页加载完成,at:${t.toLocaleString()}`)
+    // })();
+    (()=>{
+      var t=new Date();
+      console.log(`网页加载完成,at:${t.toLocaleString()}`)
+    })();
+
+    // var s=5;
+    // var timer=setInterval(function(){
+    //   console.log(s);
+    //   s--;
+    //   if(s==0){
+    //     console.log(`boom!!!`);
+    //     clearInterval(timer);
+    //   }
+    // },1000)
+    var s=5;
+    var timer=setInterval(()=>{
+      console.log(s);
+      s--;
+      if(s==0){
+        console.log(`boom!!!`);
+        clearInterval(timer);
+      }
+    },1000)
+
+  </script>
+</body>
+</html>

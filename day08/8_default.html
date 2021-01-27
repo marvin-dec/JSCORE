@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //定义一个函数，显示我的自我介绍！
+    function intr(msg="主人很懒，什么也没有留下"){
+      console.log(`我的自我介绍是:${msg}`)
+    }
+    //正常情况，如果传入了msg
+    intr("you can you up!");
+    //调用intr时，没有传入任何实参值
+    intr();
+
+    //定义一个点套餐的函数
+    function order(zhushi="香辣鸡腿堡",xiaochi="薯条",yinliao="可乐"){
+      console.log(`您点的餐是: 
+        主食:${zhushi},
+        小吃:${xiaochi},
+        饮料:${yinliao}
+      `)
+    }
+    //第一个人不着急，套餐中每个东西都自己定义
+    order("香辣鸡腿堡","薯条","可乐");
+    //第二个人着急赶火车，没空挨个选择，想要套餐原装的内容
+    order();
+    //第三个人只想把最后一个可乐换成咖啡,前两项不变！
+    //order(,,"咖啡");//语法错误！
+    //第四个人只想换第二个薯条为菠萝派，主食和饮料保持不变
+    //order(,"菠萝派")//语法错误！
+  </script>
+
+</body>
+</html>

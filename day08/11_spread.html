@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!--  -->
+  <script>
+     //复制一份数组: 
+     var arr=[1,2,3];
+    var arr2=[...arr];
+          //[]创建新空数组
+            //...arr 先打散原数组，再传值，保存进新数组
+    console.log(arr2);
+    console.log(arr==arr2);//false
+    //合并两个数组或多个数组
+    var arr1=[1,2,3];
+    var arr2=[5,6,7];
+    var arr3=[...arr1,4,...arr2,8];
+    console.log(arr3);
+
+    //克隆一个对象: 
+    var lilei={
+      sname:"Li Lei",
+      sage:11
+    };
+    var lilei2={...lilei};
+            //{}创建空对象
+            //...lilei：先打散李磊对象为多个属性，再传入新对象中保存
+    console.log(lilei2);
+    console.log(lilei2==lilei);//false
+
+    
+    //合并两个对象或多个对象以及属性值
+    var obj1={x:1,y:2};
+    var obj2={m:4,n:5};
+    var obj3={
+      ...obj1,
+      z:3,
+      ...obj2,
+      o:6
+    };
+    console.log(obj3);
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    console.log(Math.max(2,7,1,5));//7
+    console.log(Math.min(2,7,1,5));//1
+
+    var arr=[2,7,1,5];
+    //想获取数组中的最大值和最小值，又不愿意自己写遍历！
+    //console.log(Math.max(arr)); //NaN max不支持数组！
+    //尝试用apply先打散数组，再传给Math.max()
+    console.log(
+      //             替换this的对象, 要打散的数组
+      Math.max.apply(    null     ,   arr) //错！
+      //因为本例和this无关
+      //所以第一个实参值，填什么都行！！！——别扭！
+    );
+      //ES6的spread语法: 先打散arr数组，再传参
+    console.log(Math.max(...arr));
+    console.log(Math.min(...arr));
+   
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var a=10;
+    let b=100;
+    (function(){
+      var b=100;
+    })();
+    console.log(window);
+
+    let c=10;
+    //let c=100;//报错: 
+    //Identifier 'c' has already been declared
+    //变量名/标识符        已经    被    声明
+
+    //console.log(d); //报错
+    //Cannot access 'd' before initialization
+    //不能    访问   d  在xxx前 初始化(首次声明并赋值)
+    let d=100;
+
+  </script>
+</body>
+</html>

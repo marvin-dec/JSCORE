@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+     var arr=["亮亮","然然","东东"];
+    //3种: 
+    // for(var i=0;i<arr.length;i++){
+    //   console.log(`${arr[i]}-到！`)
+    // }
+    // arr.forEach(function(value){
+    //   console.log(`${value}-到！`) 
+    // })
+    // arr.forEach(v=>console.log(`${v}-到！`));
+    for(var v of arr){console.log(`${v}-到！`)}
+
+    function add(){
+      var sum=0;
+      // for(var i=0;i<arguments.length;i++){
+      //   sum+=arguments[i];
+      // }
+      //类数组对象
+      //arguments.forEach(v=>sum+=v);//报错
+      //arguments.forEach is not a function
+      for(var v of arguments){sum+=v}
+      return sum;
+    }
+    console.log(add(1,2,3));//6
+    console.log(add(1,2,3,4,5));//15
+
+    var str="hello";
+    //       01234.length=5
+    for(var i=0;i<str.length;i++){//顺序遍历
+      console.log(str[i]);
+    }
+    for(var i=str.length-1;i>=0;i--){//倒叙遍历
+      console.log(str[i]);
+    }
+    for(var i=0;i<str.length;i+=2){//调整遍历的步长
+      console.log(str[i]);
+    }
+    // for(var v of str){
+    //   console.log(v);
+    // }
+
+    for(var i=0;i<5;i++){
+      console.log(i);
+    }
+    // for(var i of 5){ //报错: 5 is not iterable不可遍历
+    //   console.log(i)
+    // }
+
+  </script>
+</body>
+</html>
