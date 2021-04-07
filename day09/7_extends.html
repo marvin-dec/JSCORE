@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    class Enemy{
+      constructor(x,y){
+        this.x=x;
+        this.y=y;
+      }
+      fly(){
+        console.log(`飞行到x:${this.x},y:${this.y}位置`)
+      }
+    }
+    class Plane extends Enemy{
+      constructor(x,y,score){
+        super(x,y);
+        this.score=score;
+      }
+      getScore(){
+        console.log(`击落一架敌机得${this.score}分`)
+      }
+    }
+    class San extends Enemy{
+      constructor(x,y,award){
+        super(x,y);
+        this.award=award;
+      }
+      getAward(){
+        console.log(
+          `击落一架降落伞，得到${this.award}奖励`
+        )
+      }
+    }
+    var p1=new Plane(50,100,5);
+    console.log(p1);
+    p1.fly();
+    p1.getScore();
+
+    var s1=new San(100,20,"1 life");
+    console.log(s1);
+    s1.fly();
+    s1.getAward();
+
+  </script>
+</body>
+</html>

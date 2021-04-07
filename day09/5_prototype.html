@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    class Student{
+      //错误2:
+      //className="初一2班"
+      //直接放在class内的属性值，默认不会放在原型对象中，而是成为子对象的自有属性
+      //今后框架也不能这么写！
+
+      constructor(sname,sage){
+        //错误1: 
+        //this.className="初一2班";//自有属性
+        //凡是在构造函数中用this.xxx方式添加的属性，都会成为子对象的自有属性
+
+        this.sname=sname;
+        this.sage=sage;
+      }
+      //默认就是放在原型对象中的
+      intr(){
+        console.log(`I'm ${this.sname},I'm ${this.sage}`)
+      }
+    }
+
+    //旧js中: 
+    Student.prototype.className="初一2班"
+
+    var lilei=new Student("Li lei",11);
+    var hmm=new Student("Han Meimei",12)
+    console.log(lilei);
+    console.log(hmm);
+    lilei.intr();
+  </script>
+</body>
+</html>

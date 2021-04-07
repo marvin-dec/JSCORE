@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var products=[
+      {pname:"小米",price:3488},
+      {pname:"华为",price:5488},
+      {pname:"苹果",price:8488},
+      {pname:"三星",price:6488},
+      {pname:"VIVO",price:2488},
+      {pname:"OPPO",price:1488}
+    ];
+    //只想用前三个商品对象，暂时不用后两个商品对象: 
+  //var p1,p2,p3;
+    var [p1,p2,p3]=products;
+    console.log(p1);
+    p1.price-=1000;
+    console.log(products[0]);
+    console.log(p2);
+    console.log(p3);
+
+    var arr=[1,2,3,4,5,6];
+    // var a,b,c;
+    var [a,b,c]=arr;
+    console.log(a);//1 //副本
+    a-=1; //修改变量
+    console.log(arr[0]);//保持不变
+
+    //如果向要第1个，第3个，第6个商品
+  //var p1,p3,p6;
+    //错误: 
+  //[p1,p3,p6]=products;
+  // 0  1  2   0  1  2
+    //正确: 
+  var [p1,,p3,,,p6]=products;
+  //   0  1 2  3 4 5   0    2   5
+  //2件事: 
+  // 1. 先声明三个变量
+  // 2. 再从数组解构
+  console.log(p1);
+    console.log(p3);
+    console.log(p6);
+
+  </script>
+</body>
+</html>

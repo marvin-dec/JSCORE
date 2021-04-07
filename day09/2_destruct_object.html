@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var user={
+      uname:"dingding",
+      uicheng:"东东",
+      upwd:"123456",
+      login(){
+        console.log(`注册`)
+      },
+      logout(){
+        console.log(`注销...`)
+        //通常带this的函数不能解构
+        //console.log(`注销${this.nicheng}成功...`)
+
+      }
+    }
+    //只想用uname属性值和logout方法
+    //一般原对象中属性和方法名命名已经很好了，没必要改名
+    //   属性名:变量 , 属性名:变量
+    var {uname:uname,logout:logout}=user;
+    //简写: 当就打算使用原属性名和方法名作为变量名——不改名，其实只写一个名字即可
+    // var uname,logout;
+    // ({ uname, logout }=user);
+    var {uname,logout}=user;
+    //一个名字两用: 既当做配对的属性名，又当做将来单独使用的变量名！
+    console.log(uname);
+    logout();
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // function order({
+    //属性名 : 形参
+    // 配对    接实参值
+    // zhushi:zhushi="香辣鸡腿堡",
+    // xiaochi:xiaochi="薯条",
+    // yinliao:yinliao="可乐"
+    // }){
+    //一个名字两用: 既当做配对的属性名，又当做形参变量名！
+
+    function order({zhushi="香辣鸡腿堡",xiaochi="薯条",yinliao="可乐"}){
+      console.log(`您点的套餐是：
+        主食：${zhushi},
+        小吃：${xiaochi},
+        饮料：${yinliao}
+      `)
+    }
+    //第一个人着急赶火车，希望不用更换任何菜品，直接点套餐默认菜品
+    order({});
+    //第二个人不着急，每个菜品都想换: 
+    order({
+      zhushi:"奥尔良烤腿堡",
+      xiaochi:"菠萝派",
+      yinliao:"咖啡"
+    });
+    //第三个人只想换饮料，其余两个保持不变
+    order({
+      yinliao:"豆浆"
+    })
+    //第四个人只想换小吃，其余两个保持不变 
+    order({
+      xiaochi:"土豆泥"
+    })
+    //第五个人想换主食和饮料
+    order({
+      zhushi:"巨无霸",
+      yinliao:"奶茶"
+    })
+
+  </script>
+</body>
+</html>
